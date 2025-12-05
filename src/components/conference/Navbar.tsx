@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react";
-import { motion, AnimatePresence } from "framer-motion";
+import { AnimatePresence, motion } from "framer-motion";
 import { Menu, X } from "lucide-react";
 
 const navLinks = [
@@ -25,77 +25,63 @@ export const Navbar = () => {
   }, []);
 
   return (
-    <motion.nav
-      initial={{ y: -100 }}
-      animate={{ y: 0 }}
-      transition={{ duration: 0.6, ease: "easeOut" }}
-      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ${
+    <nav
+      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
         isScrolled
-          ? "bg-card/95 backdrop-blur-lg shadow-card py-3"
-          : "bg-transparent py-5"
+          ? "bg-card shadow-md py-3"
+          : "bg-transparent py-4"
       }`}
     >
       <div className="container-conference">
         <div className="flex items-center justify-between">
-          <motion.a
-            href="#hero"
-            className="flex items-center gap-3"
-            whileHover={{ scale: 1.02 }}
-          >
-            <div className="w-12 h-12 rounded-xl bg-gradient-to-br from-primary to-primary-dark flex items-center justify-center">
-              <span className="text-primary-foreground font-bold text-lg">IC</span>
+          <a href="#hero" className="flex items-center gap-3">
+            <div className="w-10 h-10 rounded-lg bg-primary flex items-center justify-center">
+              <span className="text-primary-foreground font-bold">IC</span>
             </div>
-            <div className="hidden sm:block">
-              <span className={`font-bold text-lg ${isScrolled ? "text-foreground" : "text-primary-foreground"}`}>
-                ICISD 2025
-              </span>
-            </div>
-          </motion.a>
+            <span className={`font-bold text-lg ${isScrolled ? "text-foreground" : "text-white"}`}>
+              ICISD 2025
+            </span>
+          </a>
 
           {/* Desktop Navigation */}
           <div className="hidden lg:flex items-center gap-1">
             {navLinks.map((link) => (
-              <motion.a
+              <a
                 key={link.name}
                 href={link.href}
-                className={`px-4 py-2 rounded-full text-sm font-medium transition-all duration-300 ${
+                className={`px-3 py-2 rounded-md text-sm font-medium transition-colors ${
                   isScrolled
-                    ? "text-foreground hover:bg-primary/10 hover:text-primary"
-                    : "text-primary-foreground/90 hover:text-primary-foreground hover:bg-primary-foreground/10"
+                    ? "text-foreground hover:bg-muted hover:text-primary"
+                    : "text-white/90 hover:text-white hover:bg-white/10"
                 }`}
-                whileHover={{ scale: 1.05 }}
-                whileTap={{ scale: 0.95 }}
               >
                 {link.name}
-              </motion.a>
+              </a>
             ))}
           </div>
 
-          <div className="hidden lg:flex items-center gap-3">
-            <motion.a
+          <div className="hidden lg:block">
+            <a
               href="#registration"
-              className={`px-6 py-2.5 rounded-full text-sm font-semibold transition-all duration-300 ${
+              className={`px-5 py-2 rounded-md text-sm font-semibold transition-colors ${
                 isScrolled
-                  ? "bg-primary text-primary-foreground hover:shadow-blue"
-                  : "bg-primary-foreground text-primary hover:shadow-lg"
+                  ? "bg-primary text-primary-foreground hover:bg-primary-dark"
+                  : "bg-white text-primary hover:bg-white/90"
               }`}
-              whileHover={{ scale: 1.05, y: -2 }}
-              whileTap={{ scale: 0.95 }}
             >
               Register Now
-            </motion.a>
+            </a>
           </div>
 
           {/* Mobile Menu Button */}
-          <motion.button
-            className={`lg:hidden p-2 rounded-lg ${
-              isScrolled ? "text-foreground" : "text-primary-foreground"
+          <button
+            className={`lg:hidden p-2 rounded-md ${
+              isScrolled ? "text-foreground" : "text-white"
             }`}
             onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-            whileTap={{ scale: 0.9 }}
           >
             {isMobileMenuOpen ? <X size={24} /> : <Menu size={24} />}
-          </motion.button>
+          </button>
         </div>
       </div>
 
@@ -106,36 +92,30 @@ export const Navbar = () => {
             initial={{ opacity: 0, height: 0 }}
             animate={{ opacity: 1, height: "auto" }}
             exit={{ opacity: 0, height: 0 }}
-            className="lg:hidden bg-card/98 backdrop-blur-lg border-t border-border"
+            className="lg:hidden bg-card border-t border-border"
           >
-            <div className="container-conference py-6 space-y-2">
-              {navLinks.map((link, index) => (
-                <motion.a
+            <div className="container-conference py-4 space-y-1">
+              {navLinks.map((link) => (
+                <a
                   key={link.name}
                   href={link.href}
-                  initial={{ opacity: 0, x: -20 }}
-                  animate={{ opacity: 1, x: 0 }}
-                  transition={{ delay: index * 0.05 }}
-                  className="block px-4 py-3 rounded-xl text-foreground font-medium hover:bg-primary/10 hover:text-primary transition-colors"
+                  className="block px-3 py-2 rounded-md text-foreground font-medium hover:bg-muted transition-colors"
                   onClick={() => setIsMobileMenuOpen(false)}
                 >
                   {link.name}
-                </motion.a>
+                </a>
               ))}
-              <motion.a
+              <a
                 href="#registration"
-                initial={{ opacity: 0, x: -20 }}
-                animate={{ opacity: 1, x: 0 }}
-                transition={{ delay: navLinks.length * 0.05 }}
-                className="block w-full mt-4 px-6 py-3 rounded-xl bg-primary text-primary-foreground text-center font-semibold"
+                className="block w-full mt-3 px-4 py-2.5 rounded-md bg-primary text-primary-foreground text-center font-semibold"
                 onClick={() => setIsMobileMenuOpen(false)}
               >
                 Register Now
-              </motion.a>
+              </a>
             </div>
           </motion.div>
         )}
       </AnimatePresence>
-    </motion.nav>
+    </nav>
   );
 };

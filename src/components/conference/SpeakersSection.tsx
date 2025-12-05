@@ -68,71 +68,58 @@ export const SpeakersSection = () => {
   });
 
   return (
-    <section id="speakers" className="section-padding bg-background relative overflow-hidden">
-      {/* Decorative elements */}
-      <div className="absolute top-20 right-0 w-72 h-72 bg-accent/10 rounded-full blur-3xl" />
-      <div className="absolute bottom-20 left-0 w-80 h-80 bg-primary/10 rounded-full blur-3xl" />
-
-      <div className="container-conference relative" ref={ref}>
+    <section id="speakers" className="section-padding bg-background">
+      <div className="container-conference" ref={ref}>
         <motion.div
-          initial={{ opacity: 0, y: 30 }}
+          initial={{ opacity: 0, y: 20 }}
           animate={inView ? { opacity: 1, y: 0 } : {}}
-          transition={{ duration: 0.6 }}
-          className="text-center max-w-3xl mx-auto mb-16"
+          transition={{ duration: 0.5 }}
+          className="text-center max-w-3xl mx-auto mb-12"
         >
-          <span className="inline-block px-4 py-1.5 rounded-full bg-primary/10 text-primary text-sm font-semibold mb-6">
+          <span className="inline-block px-3 py-1 rounded-md bg-primary/10 text-primary text-sm font-semibold mb-4">
             Distinguished Voices
           </span>
-          <h2 className="text-4xl md:text-5xl font-bold text-foreground mb-6">
-            Keynote <span className="text-gradient-blue">Speakers</span>
+          <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-4">
+            Keynote Speakers
           </h2>
-          <p className="text-lg text-muted-foreground font-serif">
+          <p className="text-muted-foreground">
             Learn from world-renowned experts who are pioneering sustainable solutions 
             and driving transformative change across industries.
           </p>
         </motion.div>
 
-        <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-8">
+        <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
           {speakers.map((speaker, index) => (
             <motion.div
               key={speaker.name}
-              initial={{ opacity: 0, y: 50 }}
+              initial={{ opacity: 0, y: 20 }}
               animate={inView ? { opacity: 1, y: 0 } : {}}
-              transition={{ duration: 0.6, delay: index * 0.1 }}
-              className="group"
+              transition={{ duration: 0.4, delay: index * 0.05 }}
             >
               <div className="card-conference text-center">
-                {/* Image with animated border */}
-                <div className="relative w-36 h-36 mx-auto mb-6">
-                  <motion.div
-                    className="absolute inset-0 rounded-full bg-gradient-to-br from-primary via-accent to-primary"
-                    animate={{ rotate: 360 }}
-                    transition={{ duration: 8, repeat: Infinity, ease: "linear" }}
-                  />
-                  <div className="absolute inset-1 rounded-full bg-card" />
+                <div className="w-28 h-28 mx-auto mb-4 rounded-full overflow-hidden border-4 border-primary/20">
                   <img
                     src={speaker.image}
                     alt={speaker.name}
-                    className="absolute inset-2 w-[calc(100%-16px)] h-[calc(100%-16px)] rounded-full object-cover"
+                    className="w-full h-full object-cover"
                   />
                 </div>
 
-                <h3 className="text-xl font-bold text-foreground mb-1">{speaker.name}</h3>
+                <h3 className="text-lg font-bold text-foreground mb-1">{speaker.name}</h3>
                 <p className="text-sm text-primary font-semibold mb-1">{speaker.title}</p>
                 <p className="text-sm text-muted-foreground mb-2">{speaker.organization}</p>
-                <span className="inline-block px-3 py-1 rounded-full bg-accent/20 text-accent-dark text-xs font-medium">
+                <span className="inline-block px-3 py-1 rounded-md bg-accent/20 text-accent-foreground text-xs font-medium">
                   {speaker.expertise}
                 </span>
 
-                {/* Social links */}
-                <div className="flex items-center justify-center gap-3 mt-4 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                  <button className="w-8 h-8 rounded-full bg-primary/10 flex items-center justify-center hover:bg-primary hover:text-primary-foreground transition-colors">
+                <div className="flex items-center justify-center gap-2 mt-4">
+                  <button className="w-8 h-8 rounded-md bg-muted flex items-center justify-center hover:bg-primary hover:text-primary-foreground transition-colors">
                     <Linkedin className="w-4 h-4" />
                   </button>
-                  <button className="w-8 h-8 rounded-full bg-primary/10 flex items-center justify-center hover:bg-primary hover:text-primary-foreground transition-colors">
+                  <button className="w-8 h-8 rounded-md bg-muted flex items-center justify-center hover:bg-primary hover:text-primary-foreground transition-colors">
                     <Twitter className="w-4 h-4" />
                   </button>
-                  <button className="w-8 h-8 rounded-full bg-primary/10 flex items-center justify-center hover:bg-primary hover:text-primary-foreground transition-colors">
+                  <button className="w-8 h-8 rounded-md bg-muted flex items-center justify-center hover:bg-primary hover:text-primary-foreground transition-colors">
                     <Globe className="w-4 h-4" />
                   </button>
                 </div>
