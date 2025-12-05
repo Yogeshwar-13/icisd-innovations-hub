@@ -1,13 +1,30 @@
-// Update this page (the content is just a fallback if you fail to update the page)
+import { Navbar } from "@/components/conference/Navbar";
+import { HeroSection } from "@/components/conference/HeroSection";
+import { AboutSection } from "@/components/conference/AboutSection";
+import { TracksSection } from "@/components/conference/TracksSection";
+import { SpeakersSection } from "@/components/conference/SpeakersSection";
+import { StatsSection } from "@/components/conference/StatsSection";
+import { SubmissionSection } from "@/components/conference/SubmissionSection";
+import { ScheduleSection } from "@/components/conference/ScheduleSection";
+import { RegistrationSection } from "@/components/conference/RegistrationSection";
+import { CommitteeSection } from "@/components/conference/CommitteeSection";
+import { Footer } from "@/components/conference/Footer";
 
 const Index = () => {
   return (
-    <div className="flex min-h-screen items-center justify-center bg-background">
-      <div className="text-center">
-        <h1 className="mb-4 text-4xl font-bold">Welcome to Your Blank App</h1>
-        <p className="text-xl text-muted-foreground">Start building your amazing project here!</p>
-      </div>
-    </div>
+    <main className="overflow-x-hidden">
+      <Navbar />
+      <HeroSection />
+      <AboutSection />
+      <TracksSection />
+      <SpeakersSection />
+      <StatsSection />
+      <SubmissionSection />
+      <ScheduleSection />
+      <RegistrationSection />
+      <CommitteeSection />
+      <Footer />
+    </main>
   );
 };
 
