@@ -7,6 +7,7 @@ import { StatsSection } from "@/components/conference/StatsSection";
 import { SubmissionSection } from "@/components/conference/SubmissionSection";
 import { ScheduleSection } from "@/components/conference/ScheduleSection";
 import { RegistrationSection } from "@/components/conference/RegistrationSection";
+import { CollaboratorsSection } from "@/components/conference/CollaboratorsSection";
 import { CommitteeSection } from "@/components/conference/CommitteeSection";
 import { Footer } from "@/components/conference/Footer";
 
@@ -22,6 +23,7 @@ const Index = () => {
       <SubmissionSection />
       <ScheduleSection />
       <RegistrationSection />
+      <CollaboratorsSection />
       <CommitteeSection />
       <Footer />
     </main>
