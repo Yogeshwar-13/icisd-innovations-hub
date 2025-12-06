@@ -1,6 +1,6 @@
 import { motion } from "framer-motion";
 import { useInView } from "react-intersection-observer";
-import { FileText, Calendar, CheckCircle2, Send, BookOpen, Award } from "lucide-react";
+import { FileText, Calendar, CheckCircle2, BookOpen } from "lucide-react";
 
 const guidelines = [
   {
@@ -45,12 +45,6 @@ const guidelines = [
   },
 ];
 
-const publications = [
-  { name: "Scopus Indexed Journals", highlight: true },
-  { name: "Web of Science Collection", highlight: true },
-  { name: "Conference Proceedings", highlight: false },
-  { name: "Special Issue Publications", highlight: false },
-];
 
 export const SubmissionSection = () => {
   const [ref, inView] = useInView({
@@ -109,42 +103,27 @@ export const SubmissionSection = () => {
           ))}
         </div>
 
-        {/* Publication Opportunities */}
+        {/* Conference Video */}
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={inView ? { opacity: 1, y: 0 } : {}}
           transition={{ duration: 0.4, delay: 0.4 }}
-          className="card-conference bg-primary text-primary-foreground"
+          className="card-conference"
         >
-          <div className="flex flex-col lg:flex-row items-center gap-6">
-            <div className="flex-1">
-              <div className="flex items-center gap-3 mb-3">
-                <Award className="w-6 h-6 text-accent" />
-                <h3 className="text-xl font-bold">Publication Opportunities</h3>
-              </div>
-              <p className="text-primary-foreground/90 mb-4">
-                Selected papers will be published in high-impact indexed journals and conference 
-                proceedings, ensuring global visibility for your research contributions.
-              </p>
-              <div className="flex flex-wrap gap-2">
-                {publications.map((pub) => (
-                  <span
-                    key={pub.name}
-                    className={`px-3 py-1.5 rounded-md text-sm font-medium ${
-                      pub.highlight
-                        ? "bg-accent text-accent-foreground"
-                        : "bg-white/20 text-primary-foreground"
-                    }`}
-                  >
-                    {pub.name}
-                  </span>
-                ))}
-              </div>
-            </div>
-            <a href="#" className="btn-accent flex items-center gap-2 whitespace-nowrap">
-              <Send className="w-5 h-5" />
-              Submit Your Paper
-            </a>
+          <div className="text-center mb-6">
+            <h3 className="text-xl font-bold text-foreground mb-2">Conference Overview</h3>
+            <p className="text-muted-foreground">
+              Watch our introductory video to learn more about ICISD 2025
+            </p>
+          </div>
+          <div className="aspect-video w-full max-w-4xl mx-auto rounded-lg overflow-hidden">
+            <iframe
+              className="w-full h-full"
+              src="https://www.youtube.com/embed/dQw4w9WgXcQ"
+              title="ICISD 2025 Conference Overview"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+              allowFullScreen
+            />
           </div>
         </motion.div>
       </div>
