@@ -57,7 +57,7 @@ export const CollaboratorsSection = () => {
               <img
                 src={collaborator.logo}
                 alt={collaborator.name}
-                className="max-h-16 max-w-full object-contain filter grayscale hover:grayscale-0 transition-all duration-300"
+                className="max-h-16 max-w-full object-contain"
               />
             </motion.div>
           ))}
@@ -90,7 +90,7 @@ export const CollaboratorsSection = () => {
               <img
                 src={partner.logo}
                 alt={partner.name}
-                className="max-h-12 max-w-full object-contain filter grayscale hover:grayscale-0 transition-all duration-300"
+                className="max-h-12 max-w-full object-contain"
               />
             </motion.div>
           ))}
