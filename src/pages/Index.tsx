@@ -2,13 +2,13 @@ import { Navbar } from "@/components/conference/Navbar";
 import { HeroSection } from "@/components/conference/HeroSection";
 import { AboutSection } from "@/components/conference/AboutSection";
 import { TracksSection } from "@/components/conference/TracksSection";
-import { SpeakersSection } from "@/components/conference/SpeakersSection";
 import { StatsSection } from "@/components/conference/StatsSection";
 import { SubmissionSection } from "@/components/conference/SubmissionSection";
 import { ScheduleSection } from "@/components/conference/ScheduleSection";
 import { RegistrationSection } from "@/components/conference/RegistrationSection";
+import { PatronsSection } from "@/components/conference/PatronsSection";
+import { ConferenceChairsSection } from "@/components/conference/ConferenceChairsSection";
 import { CollaboratorsSection } from "@/components/conference/CollaboratorsSection";
-import { CommitteeSection } from "@/components/conference/CommitteeSection";
 import { Footer } from "@/components/conference/Footer";
 
 const Index = () => {
@@ -18,13 +18,13 @@ const Index = () => {
       <HeroSection />
       <AboutSection />
       <TracksSection />
-      <SpeakersSection />
       <StatsSection />
       <SubmissionSection />
       <ScheduleSection />
       <RegistrationSection />
+      <PatronsSection />
+      <ConferenceChairsSection />
       <CollaboratorsSection />
-      <CommitteeSection />
       <Footer />
     </main>
   );
