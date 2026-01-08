@@ -3,6 +3,7 @@ import { HeroSection } from "@/components/conference/HeroSection";
 import { AboutSection } from "@/components/conference/AboutSection";
 import { TracksSection } from "@/components/conference/TracksSection";
 import { StatsSection } from "@/components/conference/StatsSection";
+import { ImportantDatesTimeline } from "@/components/conference/ImportantDatesTimeline";
 import { SubmissionSection } from "@/components/conference/SubmissionSection";
 import { ScheduleSection } from "@/components/conference/ScheduleSection";
 import { RegistrationSection } from "@/components/conference/RegistrationSection";
@@ -19,6 +20,7 @@ const Index = () => {
       <AboutSection />
       <TracksSection />
       <StatsSection />
+      <ImportantDatesTimeline />
       <SubmissionSection />
       <ScheduleSection />
       <RegistrationSection />
