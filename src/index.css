@@ -6,97 +6,103 @@
 
 @layer base {
   :root {
-    --background: 0 0% 100%;
-    --foreground: 220 40% 13%;
+    --background: 45 30% 96%;
+    --foreground: 150 40% 15%;
 
-    --card: 0 0% 100%;
-    --card-foreground: 220 40% 13%;
+    --card: 45 40% 98%;
+    --card-foreground: 150 40% 15%;
 
-    --popover: 0 0% 100%;
-    --popover-foreground: 220 40% 13%;
+    --popover: 45 40% 98%;
+    --popover-foreground: 150 40% 15%;
 
-    --primary: 220 70% 45%;
-    --primary-foreground: 0 0% 100%;
-    --primary-light: 220 70% 55%;
-    --primary-dark: 220 70% 35%;
+    --primary: 150 50% 25%;
+    --primary-foreground: 45 40% 98%;
+    --primary-light: 150 45% 35%;
+    --primary-dark: 150 55% 18%;
 
-    --secondary: 220 20% 96%;
-    --secondary-foreground: 220 40% 13%;
+    --secondary: 45 25% 92%;
+    --secondary-foreground: 150 40% 15%;
 
-    --muted: 220 15% 94%;
-    --muted-foreground: 220 15% 45%;
+    --muted: 45 20% 90%;
+    --muted-foreground: 150 15% 40%;
 
-    --accent: 43 90% 50%;
-    --accent-foreground: 220 40% 13%;
-    --accent-light: 43 90% 60%;
-    --accent-dark: 43 90% 40%;
+    --accent: 43 85% 50%;
+    --accent-foreground: 150 50% 15%;
+    --accent-light: 43 85% 60%;
+    --accent-dark: 43 85% 40%;
 
     --destructive: 0 84% 60%;
     --destructive-foreground: 0 0% 100%;
 
-    --border: 220 15% 90%;
-    --input: 220 15% 90%;
-    --ring: 220 70% 45%;
+    --border: 150 15% 85%;
+    --input: 150 15% 85%;
+    --ring: 150 50% 25%;
 
     --radius: 0.5rem;
 
-    /* Custom colors */
-    --gold: 43 90% 50%;
-    --royal-blue: 220 70% 45%;
-    --navy: 220 50% 20%;
+    /* Custom colors - Forest Green & Gold */
+    --gold: 43 85% 50%;
+    --gold-light: 43 85% 60%;
+    --gold-dark: 43 85% 40%;
+    --forest-green: 150 50% 25%;
+    --forest-green-light: 150 45% 35%;
+    --forest-green-dark: 150 55% 18%;
+    --navy: 150 60% 12%;
+    --cream: 45 30% 96%;
     
     /* Shadows */
-    --shadow-sm: 0 1px 3px 0 hsl(220 40% 13% / 0.1);
-    --shadow-md: 0 4px 12px -2px hsl(220 40% 13% / 0.1);
-    --shadow-lg: 0 8px 24px -4px hsl(220 40% 13% / 0.12);
+    --shadow-sm: 0 1px 3px 0 hsl(150 40% 15% / 0.1);
+    --shadow-md: 0 4px 12px -2px hsl(150 40% 15% / 0.1);
+    --shadow-lg: 0 8px 24px -4px hsl(150 40% 15% / 0.12);
+    --shadow-gold: 0 4px 20px -4px hsl(43 85% 50% / 0.3);
 
-    --sidebar-background: 0 0% 98%;
-    --sidebar-foreground: 240 5.3% 26.1%;
-    --sidebar-primary: 240 5.9% 10%;
-    --sidebar-primary-foreground: 0 0% 98%;
-    --sidebar-accent: 240 4.8% 95.9%;
-    --sidebar-accent-foreground: 240 5.9% 10%;
-    --sidebar-border: 220 13% 91%;
-    --sidebar-ring: 217.2 91.2% 59.8%;
+    --sidebar-background: 45 30% 98%;
+    --sidebar-foreground: 150 40% 15%;
+    --sidebar-primary: 150 50% 25%;
+    --sidebar-primary-foreground: 45 40% 98%;
+    --sidebar-accent: 45 25% 92%;
+    --sidebar-accent-foreground: 150 50% 25%;
+    --sidebar-border: 150 15% 90%;
+    --sidebar-ring: 150 50% 25%;
   }
 
   .dark {
-    --background: 220 50% 8%;
-    --foreground: 220 20% 95%;
+    --background: 150 50% 8%;
+    --foreground: 45 30% 95%;
 
-    --card: 220 50% 12%;
-    --card-foreground: 220 20% 95%;
+    --card: 150 45% 12%;
+    --card-foreground: 45 30% 95%;
 
-    --popover: 220 50% 12%;
-    --popover-foreground: 220 20% 95%;
+    --popover: 150 45% 12%;
+    --popover-foreground: 45 30% 95%;
 
-    --primary: 220 70% 55%;
-    --primary-foreground: 0 0% 100%;
+    --primary: 150 45% 40%;
+    --primary-foreground: 150 50% 8%;
 
-    --secondary: 220 40% 20%;
-    --secondary-foreground: 220 20% 95%;
+    --secondary: 150 35% 18%;
+    --secondary-foreground: 45 30% 95%;
 
-    --muted: 220 40% 18%;
-    --muted-foreground: 220 15% 60%;
+    --muted: 150 30% 20%;
+    --muted-foreground: 45 20% 60%;
 
-    --accent: 43 90% 50%;
-    --accent-foreground: 220 40% 13%;
+    --accent: 43 85% 55%;
+    --accent-foreground: 150 50% 8%;
 
     --destructive: 0 62% 30%;
     --destructive-foreground: 0 0% 100%;
 
-    --border: 220 40% 20%;
-    --input: 220 40% 20%;
-    --ring: 220 70% 55%;
+    --border: 150 30% 22%;
+    --input: 150 30% 22%;
+    --ring: 150 45% 40%;
 
-    --sidebar-background: 240 5.9% 10%;
-    --sidebar-foreground: 240 4.8% 95.9%;
-    --sidebar-primary: 224.3 76.3% 48%;
-    --sidebar-primary-foreground: 0 0% 100%;
-    --sidebar-accent: 240 3.7% 15.9%;
-    --sidebar-accent-foreground: 240 4.8% 95.9%;
-    --sidebar-border: 240 3.7% 15.9%;
-    --sidebar-ring: 217.2 91.2% 59.8%;
+    --sidebar-background: 150 50% 10%;
+    --sidebar-foreground: 45 30% 95%;
+    --sidebar-primary: 150 45% 45%;
+    --sidebar-primary-foreground: 150 50% 8%;
+    --sidebar-accent: 150 35% 18%;
+    --sidebar-accent-foreground: 45 30% 95%;
+    --sidebar-border: 150 30% 22%;
+    --sidebar-ring: 150 45% 40%;
   }
 }
 
@@ -123,12 +129,24 @@
     background-color: hsl(var(--navy));
   }
 
+  .bg-forest {
+    background-color: hsl(var(--forest-green));
+  }
+
+  .bg-cream {
+    background-color: hsl(var(--cream));
+  }
+
   .shadow-card {
     box-shadow: var(--shadow-md);
   }
 
   .shadow-card-hover {
     box-shadow: var(--shadow-lg);
+  }
+
+  .shadow-gold {
+    box-shadow: var(--shadow-gold);
   }
 
   .btn-primary {
@@ -163,5 +181,13 @@
 
   .container-conference {
     @apply max-w-7xl mx-auto px-4 sm:px-6 lg:px-8;
+  }
+
+  .gradient-gold {
+    background: linear-gradient(135deg, hsl(var(--gold)) 0%, hsl(var(--gold-dark)) 100%);
+  }
+
+  .gradient-forest {
+    background: linear-gradient(135deg, hsl(var(--forest-green)) 0%, hsl(var(--forest-green-dark)) 100%);
   }
 }

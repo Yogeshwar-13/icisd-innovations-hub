@@ -5,34 +5,32 @@ import { Clock, MapPin, Coffee, Mic2, Users } from "lucide-react";
 
 const scheduleData = {
   day1: {
-    date: "March 15, 2025",
-    title: "Day 1 - Opening & Foundations",
+    date: "April 6, 2026",
+    title: "Day 1 - Opening & Technical Sessions",
     events: [
       { time: "08:00 - 09:00", title: "Registration & Welcome Coffee", type: "break", icon: Coffee, location: "Main Lobby" },
       { time: "09:00 - 09:45", title: "Inaugural Ceremony & Welcome Address", type: "keynote", icon: Mic2, location: "Grand Auditorium" },
-      { time: "10:00 - 11:30", title: "Keynote: Future of Renewable Energy Systems", type: "keynote", icon: Mic2, speaker: "Dr. Elena Vasquez", location: "Grand Auditorium" },
+      { time: "10:00 - 11:30", title: "Keynote: Future of AI and Intelligent Systems", type: "keynote", icon: Mic2, location: "Grand Auditorium" },
       { time: "11:30 - 11:45", title: "Networking Break", type: "break", icon: Coffee, location: "Exhibition Hall" },
-      { time: "11:45 - 13:00", title: "Technical Session: AI & Smart Technologies", type: "session", icon: Users, location: "Hall A" },
+      { time: "11:45 - 13:00", title: "Technical Session: AI & Machine Learning", type: "session", icon: Users, location: "Hall A" },
       { time: "13:00 - 14:00", title: "Lunch & Poster Presentations", type: "break", icon: Coffee, location: "Dining Area" },
-      { time: "14:00 - 15:30", title: "Workshop: Sustainable Engineering Practices", type: "workshop", icon: Users, location: "Workshop Room 1" },
-      { time: "15:30 - 17:00", title: "Panel Discussion: Climate Policy & Action", type: "session", icon: Mic2, location: "Grand Auditorium" },
-      { time: "17:00 - 18:30", title: "Technical Session: Green Finance & ESG", type: "session", icon: Users, location: "Hall B" },
-      { time: "19:00 - 21:00", title: "Welcome Dinner & Networking", type: "break", icon: Coffee, location: "Rooftop Garden" },
+      { time: "14:00 - 15:30", title: "Technical Session: Data Science & Big Data", type: "session", icon: Users, location: "Hall B" },
+      { time: "15:30 - 17:00", title: "Technical Session: IoT & Cyber-Physical Systems", type: "session", icon: Users, location: "Hall A" },
+      { time: "17:00 - 18:00", title: "Panel Discussion: Digital Transformation", type: "session", icon: Mic2, location: "Grand Auditorium" },
     ],
   },
   day2: {
-    date: "March 16, 2025",
-    title: "Day 2 - Innovation & Practice",
+    date: "April 7, 2026",
+    title: "Day 2 - Innovation & Closing",
     events: [
       { time: "08:30 - 09:00", title: "Morning Coffee & Networking", type: "break", icon: Coffee, location: "Main Lobby" },
-      { time: "09:00 - 10:30", title: "Keynote: Circular Economy Revolution", type: "keynote", icon: Mic2, speaker: "Prof. Anders Lindberg", location: "Grand Auditorium" },
+      { time: "09:00 - 10:30", title: "Keynote: Quantum Computing & Future Tech", type: "keynote", icon: Mic2, location: "Grand Auditorium" },
       { time: "10:30 - 10:45", title: "Refreshment Break", type: "break", icon: Coffee, location: "Exhibition Hall" },
-      { time: "10:45 - 12:15", title: "Technical Session: Smart Cities & IoT", type: "session", icon: Users, location: "Hall A" },
+      { time: "10:45 - 12:15", title: "Technical Session: Cloud & Distributed Systems", type: "session", icon: Users, location: "Hall A" },
       { time: "12:15 - 13:15", title: "Lunch Break", type: "break", icon: Coffee, location: "Dining Area" },
-      { time: "13:15 - 14:45", title: "Workshop: Data Science for Sustainability", type: "workshop", icon: Users, location: "Workshop Room 2" },
-      { time: "15:00 - 16:30", title: "Technical Session: Biotechnology Innovations", type: "session", icon: Users, location: "Hall B" },
-      { time: "16:30 - 17:30", title: "Q&A with Industry Leaders", type: "session", icon: Mic2, location: "Grand Auditorium" },
-      { time: "17:30 - 18:00", title: "Closing Ceremony & Awards", type: "keynote", icon: Mic2, location: "Grand Auditorium" },
+      { time: "13:15 - 14:45", title: "Technical Session: Cybersecurity & Blockchain", type: "session", icon: Users, location: "Hall B" },
+      { time: "15:00 - 16:00", title: "Technical Session: Sustainability & Green Computing", type: "session", icon: Users, location: "Hall A" },
+      { time: "16:00 - 17:00", title: "Valedictory & Awards Ceremony", type: "keynote", icon: Mic2, location: "Grand Auditorium" },
     ],
   },
 };
@@ -40,7 +38,7 @@ const scheduleData = {
 const typeColors = {
   keynote: "bg-primary text-primary-foreground",
   session: "bg-accent/20 text-accent-foreground border border-accent/30",
-  workshop: "bg-emerald-100 text-emerald-800 border border-emerald-200",
+  workshop: "bg-primary/10 text-primary border border-primary/20",
   break: "bg-muted text-muted-foreground",
 };
 
@@ -132,9 +130,6 @@ export const ScheduleSection = () => {
                         {event.type}
                       </span>
                     </div>
-                    {event.speaker && (
-                      <p className="text-sm text-primary font-medium mb-1">Speaker: {event.speaker}</p>
-                    )}
                     <div className="flex items-center gap-1 text-sm text-muted-foreground">
                       <MapPin className="w-3.5 h-3.5" />
                       <span>{event.location}</span>

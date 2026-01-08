@@ -1,48 +1,39 @@
 import { motion } from "framer-motion";
 import { useInView } from "react-intersection-observer";
-import { Check, Star, ArrowRight } from "lucide-react";
+import { Check, ArrowRight } from "lucide-react";
 
 const registrationCategories = [
   {
-    title: "Student",
-    subtitle: "Undergraduate & Graduate",
-    earlyBird: 99,
-    regular: 149,
+    title: "Author (Indian)",
+    subtitle: "UG/PG/Research Scholar",
+    earlyBird: "₹9,500",
+    late: "₹11,000",
     features: ["Conference Access", "Digital Proceedings", "Certificate", "Lunch & Refreshments"],
-    popular: false,
   },
   {
-    title: "Research Scholar",
-    subtitle: "PhD & Postdoctoral",
-    earlyBird: 149,
-    regular: 199,
+    title: "Author (Foreign)",
+    subtitle: "International Participants",
+    earlyBird: "$350",
+    late: "$400",
     features: ["Conference Access", "Digital Proceedings", "Certificate", "Lunch & Refreshments", "Workshop Access"],
-    popular: false,
   },
   {
-    title: "Faculty",
-    subtitle: "Academic Professionals",
-    earlyBird: 199,
-    regular: 299,
-    features: ["Conference Access", "Digital Proceedings", "Certificate", "Lunch & Refreshments", "Workshop Access", "Networking Dinner"],
+    title: "Industry Delegates",
+    subtitle: "UG/PG/Industry",
+    earlyBird: "₹11,000",
+    late: "₹12,000",
+    features: ["Conference Access", "Digital Proceedings", "Certificate", "Lunch & Refreshments", "Networking Sessions"],
     popular: true,
   },
-  {
-    title: "Industry Delegate",
-    subtitle: "Corporate Representatives",
-    earlyBird: 349,
-    regular: 449,
-    features: ["Conference Access", "Digital Proceedings", "Certificate", "Lunch & Refreshments", "Workshop Access", "Networking Dinner", "Exhibition Access"],
-    popular: false,
-  },
-  {
-    title: "International",
-    subtitle: "Outside Host Country",
-    earlyBird: 249,
-    regular: 349,
-    features: ["Virtual + Onsite Access", "Digital Proceedings", "Certificate", "Lunch & Refreshments", "Workshop Access", "Networking Dinner"],
-    popular: false,
-  },
+];
+
+const importantDates = [
+  { label: "Submission Deadline", date: "5th March 2026" },
+  { label: "Acceptance Notification", date: "10th March 2026" },
+  { label: "Early Bird Registration", date: "12th March 2026" },
+  { label: "Final Manuscript Notification", date: "15th March 2026" },
+  { label: "Late Registration", date: "15th March 2026" },
+  { label: "Conference Dates", date: "6 & 7 April 2026" },
 ];
 
 export const RegistrationSection = () => {
@@ -67,47 +58,46 @@ export const RegistrationSection = () => {
             Registration Fees
           </h2>
           <p className="text-muted-foreground">
-            Early bird pricing available until February 1, 2025. All fees are in USD and include 
-            applicable taxes.
+            Early bird pricing available until 12th March 2026. Register early to avail special rates.
           </p>
         </motion.div>
 
-        <div className="grid sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5 gap-4">
+        {/* Registration Cards */}
+        <div className="grid md:grid-cols-3 gap-6 mb-16">
           {registrationCategories.map((category, index) => (
             <motion.div
               key={category.title}
               initial={{ opacity: 0, y: 20 }}
               animate={inView ? { opacity: 1, y: 0 } : {}}
-              transition={{ duration: 0.4, delay: index * 0.05 }}
+              transition={{ duration: 0.4, delay: index * 0.1 }}
               className={`relative card-conference flex flex-col ${
                 category.popular ? "ring-2 ring-accent" : ""
               }`}
             >
               {category.popular && (
-                <div className="absolute -top-3 left-1/2 -translate-x-1/2 px-3 py-1 rounded-md bg-accent text-accent-foreground text-xs font-bold flex items-center gap-1">
-                  <Star className="w-3 h-3" fill="currentColor" />
-                  Most Popular
+                <div className="absolute -top-3 left-1/2 -translate-x-1/2 px-3 py-1 rounded-md bg-accent text-accent-foreground text-xs font-bold">
+                  Recommended
                 </div>
               )}
 
               <div className="text-center mb-4">
-                <h3 className="text-lg font-bold text-foreground">{category.title}</h3>
+                <h3 className="text-xl font-bold text-foreground">{category.title}</h3>
                 <p className="text-sm text-muted-foreground">{category.subtitle}</p>
               </div>
 
-              <div className="text-center mb-4">
-                <div className="flex items-center justify-center gap-2 mb-1">
-                  <span className="text-3xl font-bold text-primary">${category.earlyBird}</span>
-                  <span className="px-2 py-0.5 rounded bg-accent/20 text-accent-foreground text-xs font-semibold">
+              <div className="text-center mb-6 p-4 bg-primary/5 rounded-lg">
+                <div className="mb-2">
+                  <span className="text-3xl font-bold text-primary">{category.earlyBird}</span>
+                  <span className="ml-2 px-2 py-0.5 rounded bg-accent/20 text-accent-foreground text-xs font-semibold">
                     Early Bird
                   </span>
                 </div>
                 <p className="text-sm text-muted-foreground">
-                  Regular: <span className="line-through">${category.regular}</span>
+                  Late Fee: <span className="font-semibold">{category.late}</span>
                 </p>
               </div>
 
-              <ul className="space-y-2 flex-1 mb-4">
+              <ul className="space-y-2 flex-1 mb-6">
                 {category.features.map((feature) => (
                   <li key={feature} className="flex items-center gap-2 text-sm text-muted-foreground">
                     <Check className="w-4 h-4 text-accent flex-shrink-0" />
@@ -117,26 +107,49 @@ export const RegistrationSection = () => {
               </ul>
 
               <button
-                className={`w-full py-2.5 rounded-md font-semibold transition-all duration-200 flex items-center justify-center gap-2 ${
+                className={`w-full py-3 rounded-md font-semibold transition-all duration-200 flex items-center justify-center gap-2 ${
                   category.popular
                     ? "bg-accent text-accent-foreground hover:opacity-90"
                     : "bg-primary text-primary-foreground hover:bg-primary-dark"
                 }`}
               >
-                Register
+                Register Now
                 <ArrowRight className="w-4 h-4" />
               </button>
             </motion.div>
           ))}
         </div>
 
+        {/* Important Dates */}
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          animate={inView ? { opacity: 1, y: 0 } : {}}
+          transition={{ duration: 0.5, delay: 0.3 }}
+          className="card-conference"
+        >
+          <h3 className="text-2xl font-bold text-foreground text-center mb-8">
+            Important Dates
+          </h3>
+          <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-4">
+            {importantDates.map((item, index) => (
+              <div
+                key={item.label}
+                className="flex items-center justify-between p-4 bg-primary/5 rounded-lg border border-border"
+              >
+                <span className="text-sm text-muted-foreground">{item.label}</span>
+                <span className="font-bold text-primary">{item.date}</span>
+              </div>
+            ))}
+          </div>
+        </motion.div>
+
         <motion.p
           initial={{ opacity: 0, y: 20 }}
           animate={inView ? { opacity: 1, y: 0 } : {}}
-          transition={{ duration: 0.4, delay: 0.3 }}
+          transition={{ duration: 0.4, delay: 0.4 }}
           className="text-center text-sm text-muted-foreground mt-6"
         >
-          Secure payment via Credit Card, PayPal, or Bank Transfer. Group discounts available for 5+ participants.
+          Payment via Bank Transfer. All accepted papers will be published as Scopus-indexed conference book proceedings with ISBN and DOI.
         </motion.p>
       </div>
     </section>

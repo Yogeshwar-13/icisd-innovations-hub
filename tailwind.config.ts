@@ -61,12 +61,13 @@ export default {
           light: "hsl(var(--gold-light))",
           dark: "hsl(var(--gold-dark))",
         },
-        royal: {
-          DEFAULT: "hsl(var(--royal-blue))",
-          light: "hsl(var(--royal-blue-light))",
-          dark: "hsl(var(--royal-blue-dark))",
+        forest: {
+          DEFAULT: "hsl(var(--forest-green))",
+          light: "hsl(var(--forest-green-light))",
+          dark: "hsl(var(--forest-green-dark))",
         },
         navy: "hsl(var(--navy))",
+        cream: "hsl(var(--cream))",
         sidebar: {
           DEFAULT: "hsl(var(--sidebar-background))",
           foreground: "hsl(var(--sidebar-foreground))",

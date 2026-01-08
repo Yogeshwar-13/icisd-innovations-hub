@@ -1,6 +1,6 @@
 import { motion } from "framer-motion";
 import { useInView } from "react-intersection-observer";
-import { FileText, Calendar, CheckCircle2, BookOpen } from "lucide-react";
+import { FileText, Calendar, CheckCircle2, BookOpen, ExternalLink } from "lucide-react";
 
 const guidelines = [
   {
@@ -27,10 +27,10 @@ const guidelines = [
     icon: Calendar,
     title: "Important Deadlines",
     items: [
-      "Abstract Submission: December 15, 2024",
-      "Full Paper Deadline: January 31, 2025",
-      "Notification of Acceptance: February 20, 2025",
-      "Camera-Ready Version: March 1, 2025",
+      "Submission Deadline: 5th March 2026",
+      "Acceptance Notification: 10th March 2026",
+      "Early Bird Registration: 12th March 2026",
+      "Conference Dates: 6 & 7 April 2026",
     ],
   },
   {
@@ -103,24 +103,60 @@ export const SubmissionSection = () => {
           ))}
         </div>
 
-        {/* Conference Video */}
+        {/* Publication Info */}
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={inView ? { opacity: 1, y: 0 } : {}}
           transition={{ duration: 0.4, delay: 0.4 }}
-          className="card-conference"
+          className="card-conference bg-primary/5 border-primary/20"
+        >
+          <div className="text-center mb-6">
+            <h3 className="text-xl font-bold text-foreground mb-2">Publication</h3>
+            <p className="text-muted-foreground">
+              All accepted and registered papers will be published as <strong className="text-primary">Scopus-indexed</strong> conference 
+              book proceedings. Assigned ISBN and DOI (as per publisher norms).
+            </p>
+          </div>
+          <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
+            <a 
+              href="https://cmt3.research.microsoft.com/User/Login?ReturnUrl=%2FICISD2026"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="btn-primary flex items-center gap-2"
+            >
+              Paper Submission through CMT
+              <ExternalLink className="w-4 h-4" />
+            </a>
+            <a 
+              href="https://icicis.spu.ac.in"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="btn-outline border-primary text-primary hover:bg-primary/10 flex items-center gap-2"
+            >
+              Visit Conference Website
+              <ExternalLink className="w-4 h-4" />
+            </a>
+          </div>
+        </motion.div>
+
+        {/* Conference Video */}
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          animate={inView ? { opacity: 1, y: 0 } : {}}
+          transition={{ duration: 0.4, delay: 0.5 }}
+          className="card-conference mt-8"
         >
           <div className="text-center mb-6">
             <h3 className="text-xl font-bold text-foreground mb-2">Conference Overview</h3>
             <p className="text-muted-foreground">
-              Watch our introductory video to learn more about ICISD 2025
+              Watch our introductory video to learn more about ICISD'26
             </p>
           </div>
           <div className="aspect-video w-full max-w-4xl mx-auto rounded-lg overflow-hidden">
             <iframe
               className="w-full h-full"
               src="https://www.youtube.com/embed/dQw4w9WgXcQ"
-              title="ICISD 2025 Conference Overview"
+              title="ICISD 2026 Conference Overview"
               allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
               allowFullScreen
             />
