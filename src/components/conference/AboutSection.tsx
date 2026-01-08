@@ -1,27 +1,27 @@
 import { motion } from "framer-motion";
 import { useInView } from "react-intersection-observer";
-import { Target, Users, Lightbulb, Award, Leaf } from "lucide-react";
+import { Target, Users, Lightbulb, Award, BookOpen } from "lucide-react";
 
 const highlights = [
   {
     icon: Target,
-    title: "Mission-Driven",
-    description: "Advancing sustainable solutions through interdisciplinary research collaboration",
+    title: "Research Focus",
+    description: "Advancing AI, data-driven intelligence, and cyber-physical systems",
   },
   {
     icon: Lightbulb,
-    title: "Innovation Focus",
-    description: "Showcasing cutting-edge technologies driving environmental transformation",
+    title: "Innovation Hub",
+    description: "Cutting-edge technologies transforming industries and society",
   },
   {
     icon: Users,
-    title: "Global Reach",
-    description: "Connecting researchers, innovators, and policymakers from 50+ countries",
+    title: "Global Platform",
+    description: "Connecting researchers, academicians, and industry professionals",
   },
   {
     icon: Award,
-    title: "Excellence",
-    description: "Peer-reviewed publications in high-impact indexed journals",
+    title: "Scopus Indexed",
+    description: "All accepted papers published with ISBN and DOI",
   },
 ];
 
@@ -46,30 +46,34 @@ export const AboutSection = () => {
             </span>
 
             <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-6 leading-tight">
-              Shaping Tomorrow's Sustainable World
+              About ICISD'26
             </h2>
 
             <p className="text-muted-foreground leading-relaxed mb-4">
-              ICISD 2025 brings together visionary researchers, industry leaders, and policymakers 
-              to explore groundbreaking solutions for our planet's most pressing challenges. This 
-              premier international forum serves as a catalyst for transformative ideas in sustainable 
-              development.
+              The International Conference on Intelligent Systems and Digital Transformation (ICISD'26) 
+              provides a global platform for researchers, academicians, and industry professionals to 
+              present and discuss innovations driving intelligent and digitally enabled systems.
+            </p>
+
+            <p className="text-muted-foreground leading-relaxed mb-4">
+              The conference focuses on cutting-edge technologies such as artificial intelligence, 
+              data-driven intelligence, automation, and cyber-physical systems that are transforming 
+              industries and society.
             </p>
 
             <p className="text-muted-foreground leading-relaxed mb-6">
-              Through rigorous academic discourse and hands-on workshops, participants will 
-              engage with pioneering research spanning renewable energy, artificial intelligence, 
-              circular economy models, and smart city innovations.
+              ICISD'26 promotes interdisciplinary collaboration, knowledge exchange, and the development 
+              of sustainable and intelligent digital solutions for the future.
             </p>
 
             <div className="flex flex-wrap items-center gap-4">
-              <div className="flex items-center gap-2 text-primary">
-                <Leaf className="w-5 h-5" />
-                <span className="font-semibold text-sm">Carbon Neutral Event</span>
+              <div className="flex items-center gap-2 text-primary bg-primary/10 px-4 py-2 rounded-lg">
+                <BookOpen className="w-5 h-5" />
+                <span className="font-semibold text-sm">Scopus Indexed Publication</span>
               </div>
-              <div className="flex items-center gap-2 text-primary">
+              <div className="flex items-center gap-2 text-primary bg-primary/10 px-4 py-2 rounded-lg">
                 <Users className="w-5 h-5" />
-                <span className="font-semibold text-sm">Open Access Research</span>
+                <span className="font-semibold text-sm">Hybrid Mode Event</span>
               </div>
             </div>
           </motion.div>

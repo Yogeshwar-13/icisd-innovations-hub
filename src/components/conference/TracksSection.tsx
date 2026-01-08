@@ -1,68 +1,95 @@
 import { motion } from "framer-motion";
 import { useInView } from "react-intersection-observer";
 import {
-  Cpu,
-  Leaf,
-  Sun,
+  Brain,
   Database,
-  Recycle,
-  TrendingUp,
-  Building2,
-  Bot,
-  Microscope,
-  Zap,
+  MessageSquare,
+  Wifi,
+  Shield,
+  Cloud,
+  Atom,
+  Leaf,
 } from "lucide-react";
 
 const tracks = [
   {
-    icon: Zap,
-    title: "Sustainable Engineering",
-    description: "Green manufacturing, sustainable materials, and eco-friendly design principles.",
-  },
-  {
-    icon: Cpu,
-    title: "AI & Smart Technologies",
-    description: "Machine learning for environmental monitoring and resource optimization.",
-  },
-  {
-    icon: Leaf,
-    title: "Environmental Science",
-    description: "Climate change mitigation, ecosystem restoration, and biodiversity conservation.",
-  },
-  {
-    icon: Sun,
-    title: "Renewable Energy Systems",
-    description: "Solar, wind, hybrid energy solutions, and energy storage technologies.",
+    icon: Brain,
+    title: "Track 1: Artificial Intelligence and Intelligent Systems",
+    items: [
+      "Machine learning, deep learning, and reinforcement learning",
+      "Intelligent decision support systems and XAI",
+      "AI in healthcare, education, agriculture and industry",
+      "Computer Vision and Image Analysis",
+    ],
   },
   {
     icon: Database,
-    title: "Data Science & Green Computing",
-    description: "Energy-efficient algorithms and carbon-aware computing practices.",
+    title: "Track 2: Data Science and Big Data Analytics",
+    items: [
+      "Data Mining",
+      "Data Visualization and Feature Engineering",
+      "Data Governance and Quality",
+      "Predictive analytics and visualization",
+    ],
   },
   {
-    icon: Recycle,
-    title: "Circular Economy Models",
-    description: "Waste reduction frameworks and regenerative business practices.",
+    icon: MessageSquare,
+    title: "Track 3: Natural Language Processing & Speech Technologies",
+    items: [
+      "Text Mining and Sentiment Analysis",
+      "Multilingual Models / LLMs",
+      "Speech Recognition",
+      "Chatbots and Conversational AI",
+    ],
   },
   {
-    icon: TrendingUp,
-    title: "Green Finance & ESG",
-    description: "Sustainable investment strategies and impact measurement frameworks.",
+    icon: Wifi,
+    title: "Track 4: Internet of Things (IoT) and Cyber-Physical Systems",
+    items: [
+      "IoT architectures and protocols",
+      "Cyber physical systems design and applications",
+      "Embedded and Real-Time Computing",
+      "Digital Twins and Bio IoT",
+    ],
   },
   {
-    icon: Building2,
-    title: "Smart Cities & IoT",
-    description: "Urban sustainability and connected infrastructure systems.",
+    icon: Shield,
+    title: "Track 5: Cybersecurity and Blockchain",
+    items: [
+      "Network Security and Cryptography",
+      "Ethical Hacking and Forensics",
+      "Smart Contracts & Zero-Trust Architecture",
+    ],
   },
   {
-    icon: Bot,
-    title: "Robotics & Automation",
-    description: "Autonomous systems for environmental monitoring and precision agriculture.",
+    icon: Cloud,
+    title: "Track 6: Cloud Computing & Distributed Systems",
+    items: [
+      "Serverless & Microservice Architectures",
+      "Cloud Security & Cloud-Native Systems",
+      "Distributed Storage and Computing Frameworks (Hadoop, Spark)",
+      "Green and Sustainable Computing",
+    ],
   },
   {
-    icon: Microscope,
-    title: "Biotechnology for Sustainability",
-    description: "Biofuels, bioremediation, and sustainable agricultural innovations.",
+    icon: Atom,
+    title: "Track 7: Quantum Computing & Future Technologies",
+    items: [
+      "Quantum Algorithms",
+      "Quantum Cryptography",
+      "Quantum Machine Learning",
+      "Hardware & Hybrid Architectures",
+    ],
+  },
+  {
+    icon: Leaf,
+    title: "Track 8: Sustainability & Digital Transformation",
+    items: [
+      "Green Computing",
+      "Intelligent Transport Systems",
+      "AI for Climate and Society",
+      "Smart Grid and Smart Governance",
+    ],
   },
 ];
 
@@ -85,31 +112,41 @@ export const TracksSection = () => {
             Research Domains
           </span>
           <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-4">
-            Conference Tracks
+            Tracks for Conference
           </h2>
           <p className="text-muted-foreground">
-            Explore ten interdisciplinary tracks spanning the spectrum of sustainable development.
+            Explore eight interdisciplinary tracks covering cutting-edge technologies 
+            in intelligent systems and digital transformation.
           </p>
         </motion.div>
 
-        <div className="grid sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5 gap-4">
+        <div className="grid md:grid-cols-2 gap-6">
           {tracks.map((track, index) => (
             <motion.div
               key={track.title}
               initial={{ opacity: 0, y: 20 }}
               animate={inView ? { opacity: 1, y: 0 } : {}}
-              transition={{ duration: 0.4, delay: index * 0.03 }}
+              transition={{ duration: 0.4, delay: index * 0.05 }}
             >
-              <div className="card-conference h-full flex flex-col text-center">
-                <div className="w-12 h-12 mx-auto rounded-lg bg-primary/10 flex items-center justify-center mb-4">
-                  <track.icon className="w-6 h-6 text-primary" />
+              <div className="card-conference h-full">
+                <div className="flex items-start gap-4">
+                  <div className="w-12 h-12 rounded-lg bg-primary/10 flex items-center justify-center flex-shrink-0">
+                    <track.icon className="w-6 h-6 text-primary" />
+                  </div>
+                  <div className="flex-1">
+                    <h3 className="text-lg font-bold text-foreground mb-3">
+                      {track.title}
+                    </h3>
+                    <ul className="space-y-1.5">
+                      {track.items.map((item, i) => (
+                        <li key={i} className="flex items-start gap-2 text-sm text-muted-foreground">
+                          <span className="w-1.5 h-1.5 rounded-full bg-accent mt-2 flex-shrink-0" />
+                          <span>{item}</span>
+                        </li>
+                      ))}
+                    </ul>
+                  </div>
                 </div>
-                <h3 className="text-base font-bold text-foreground mb-2">
-                  {track.title}
-                </h3>
-                <p className="text-sm text-muted-foreground leading-relaxed">
-                  {track.description}
-                </p>
               </div>
             </motion.div>
           ))}
