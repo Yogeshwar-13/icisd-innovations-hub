@@ -27,14 +27,6 @@ const registrationCategories = [
   },
 ];
 
-const importantDates = [
-  { label: "Submission Deadline", date: "5th March 2026" },
-  { label: "Acceptance Notification", date: "10th March 2026" },
-  { label: "Early Bird Registration", date: "12th March 2026" },
-  { label: "Final Manuscript Notification", date: "15th March 2026" },
-  { label: "Late Registration", date: "15th March 2026" },
-  { label: "Conference Dates", date: "6 & 7 April 2026" },
-];
 
 export const RegistrationSection = () => {
   const [ref, inView] = useInView({
@@ -120,28 +112,6 @@ export const RegistrationSection = () => {
           ))}
         </div>
 
-        {/* Important Dates */}
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          animate={inView ? { opacity: 1, y: 0 } : {}}
-          transition={{ duration: 0.5, delay: 0.3 }}
-          className="card-conference"
-        >
-          <h3 className="text-2xl font-bold text-foreground text-center mb-8">
-            Important Dates
-          </h3>
-          <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-4">
-            {importantDates.map((item, index) => (
-              <div
-                key={item.label}
-                className="flex items-center justify-between p-4 bg-primary/5 rounded-lg border border-border"
-              >
-                <span className="text-sm text-muted-foreground">{item.label}</span>
-                <span className="font-bold text-primary">{item.date}</span>
-              </div>
-            ))}
-          </div>
-        </motion.div>
 
         <motion.p
           initial={{ opacity: 0, y: 20 }}
